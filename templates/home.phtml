@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <h1>Bienvenue sur votre TaskList</h1>
+    <a href="/index.php?action=add">Ajouter une taches à la liste</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nom de la tache</th>
+                <th scope="col">Date de la tache</th>
+                <th scope="col">Catégorie de la tache</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($task as $t): ?>
+                <tr>
+                    <td><?= $t['task_nom'] ?></td>
+                    <td><?= $t['task_date'] ?></td>
+                    <td><?= $t['task_categorie'] ?></td>
+                    <td>
+                        <a href="/index.php?action=update&id=<?=$t['task_id']?>">Modifier</a>
+                        <a href="/index.php?action=delete&id=<?=$t['task_id']?>">Supprimer</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</body>
+</html>

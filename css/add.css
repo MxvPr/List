@@ -1,0 +1,14 @@
+body { 
+    display:flex ;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 100px;
+ } 
+
+input{
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
